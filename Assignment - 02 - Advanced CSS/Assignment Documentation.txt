@@ -1,0 +1,95 @@
+Assignment: My Favourite Movies Blog
+
+1. Introduction
+
+This project is a personal blog that showcases a curated list of my favourite movies. I originally built this blog as an HTML-only assignment, and after learning CSS, I revisited it to improve its design, responsiveness, and interactivity using only HTML and CSS. The final website features a header, navigation bar, movie reviews (with posters, video trailers, and reviews), an "About Me" section, a "Contact" form, and a footer.
+
+2. Objectives
+
+Consistent Theme & Color Palette:
+Implement a soothing, eye-friendly design with soft background colors and complementary text and accent colors.
+
+Responsive Design:
+Ensure the layout adapts well across devices (desktop, tablet, and mobile) using CSS Grid, Flexbox, and media queries.
+
+Clear Section Styling:
+Distinct styling for the header, navigation, blog posts, about me, contact, and footer to improve readability and navigation.
+
+Interactive Enhancements:
+Add hover effects on images and navigation links to enrich user experience.
+
+3. Code Structure and Design Decisions
+
+3.1 HTML Structure
+
+Header:
+Displays the blog title and a short tagline with a gradient background for visual impact.
+
+Navigation Bar:
+Provides sticky links to key sections (Movie Reviews, About Me, and Contact) for easy access during scrolling.
+
+Main Content:
+
+Blog Posts (#blog):
+Each movie review is encapsulated in a <section class="movie-container"> containing:
+A movie title (<h2>)
+A poster (<img>)
+A video trailer (<iframe>)
+A review (<p>)
+
+About Me (#about):
+A brief introduction styled with a distinct background.
+
+Contact (#contact):
+Contact details and a simple form for user messages.
+
+Footer:
+Displays copyright and designer information.
+
+3.2 CSS Styling
+
+General Styles:
+A soft, neutral background reduces eye strain in low-light environments. The typography is chosen for clarity, with careful attention to font sizes and contrast.
+
+Section-Specific Styles:
+
+Header: Bold typography and generous padding set the tone.
+
+Navigation: A dark background with hover effects on links improves usability.
+
+Movie Containers: Card-like layouts with consistent sizing for images and videos (max-width of 600px) and subtle hover animations create a balanced, modern look.
+
+About Me and Contact: Distinct background colors and ample padding highlight these sections.
+
+Footer: A simple, matching design that ties the site together.
+
+Responsive Design: Media queries adjust layout, font sizes, and spacing to ensure optimal viewing on various devices.
+
+4. Meeting the Assignment Requirements
+
+Overall Style:
+A consistent, soothing color scheme and legible typography enhance the user experience.
+
+Header & Navigation:
+Clearly display the blog’s identity with an engaging header and accessible, interactive navigation.
+
+Content Layout:
+Movie reviews are cleanly separated into card layouts that maintain visual balance. The "About Me" and "Contact" sections provide necessary details with user-friendly formatting.
+
+Responsiveness:
+The design adapts well to different screen sizes, ensuring usability on both desktop and mobile devices.
+
+5. Challenges and Solutions
+
+Media Sizing:
+Initial issues with mismatched video and image sizes were resolved by standardizing maximum widths and setting fixed or balanced heights for iframes.
+
+Eye-Friendly Design:
+Transitioning from a stark white background to a softer color palette improved visual comfort, especially in low-light conditions.
+
+Navigation Accessibility:
+Implementing a sticky navigation bar allowed users to easily access different sections even after scrolling.
+
+6. Conclusion
+
+This documentation outlines how the Favourite Movies Blog evolved from an HTML-only assignment into a fully styled, responsive website using HTML and CSS. The project reflects a thoughtful application of design principles—consistent theming, clear sectioning, responsive layouts, and interactive enhancements—to deliver a user-friendly and visually appealing blog.
