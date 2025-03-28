@@ -1,0 +1,321 @@
+/* style.css */
+
+/* Root Variables */
+:root {
+  --sirocco: #c39d88;
+  --cannoli-cream: #f1f0e2;
+  --cream-tan: #e4c8b7;
+  --safari: #bbaa91;
+  --mocha-mousse: #a47864;
+  --chocolate-martini: #56443f;
+  --text-dark: #4a2a2a; /* Primary text color */
+  --text-light: #fff5f3; /* Light text for dark backgrounds */
+  --nav-height: 60px;
+  --light-gray: #f8f9fa;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--cannoli-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Keyframes for Pop Up Animation */
+@keyframes popUp {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-height);
+  background-color: var(--cannoli-cream);
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+nav .nav-left {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--mocha-mousse);
+}
+
+nav .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+nav .nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--mocha-mousse);
+  margin: 0 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav .nav-btn:hover {
+  color: var(--chocolate-martini);
+}
+
+nav input[type="text"] {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+/* Hide mobile menu container by default */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-height);
+  right: 0;
+  background-color: var(--cannoli-cream);
+  width: 100%;
+  box-shadow: 0 2px 4px var(--shadow);
+  padding: 10px 0;
+}
+
+.mobile-menu .nav-btn,
+.mobile-menu input[type="text"] {
+  margin: 10px;
+}
+
+/* Hamburger icon is hidden on large screens */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--mocha-mousse);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Home Section */
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-color: var(--cannoli-cream);
+}
+
+.home-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.home-left h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--mocha-mousse);
+}
+
+.home-left p {
+  font-size: 1.1rem;
+}
+
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Section Headings */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--chocolate-martini);
+}
+
+/* Registration Section */
+.form-section {
+  padding: 40px 20px;
+  background-color: var(--cream-tan);
+}
+
+#studentForm {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#studentForm input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid var(--mocha-mousse);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+#studentForm input:focus {
+  outline: none;
+  border-color: var(--chocolate-martini);
+  transform: scale(1.05);
+}
+
+#studentForm button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: var(--mocha-mousse);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Pop-up hover animation for the Add Student button */
+#studentForm button:hover {
+  background-color: var(--chocolate-martini);
+  animation: popUp 0.3s ease-out;
+}
+
+/* Student Database Section */
+.database-section {
+  padding: 40px 20px;
+  background-color: var(--cannoli-cream);
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 400px; /* Set a max height for the table */
+}
+
+.database-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.database-section th,
+.database-section td {
+  padding: 12px 15px;
+  border: 1px solid var(--mocha-mousse);
+  text-align: left;
+  background-color: var(--cannoli-cream);
+}
+
+.database-section th {
+  background-color: var(--cannoli-cream);
+  color: var(--mocha-mousse);
+}
+
+.database-section td.actions {
+  display: flex;
+  gap: 10px;
+  background-color: var(--cannoli-cream);
+}
+
+.database-section button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Pop-up animation for Edit and Delete buttons on hover */
+.database-section button.edit:hover,
+.database-section button.delete:hover {
+  animation: popUp 0.3s ease-out;
+}
+
+.database-section button.edit {
+  background-color: var(--sirocco);
+  color: var(--text-light);
+}
+
+.database-section button.delete {
+  background-color: #dc3545;
+  color: var(--text-light);
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--cream-tan);
+}
+
+.contact-section p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--chocolate-martini);
+  border-top: 1px solid var(--light-gray);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-section {
+    flex-direction: column;
+  }
+
+  nav .nav-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav input[type=\"text\"] {
+    margin-left: 0;
+  }
+
+  /* Hide full nav items on mobile */
+  nav .nav-right {
+    display: none;
+  }
+  /* Show hamburger icon */
+  .hamburger {
+    display: flex;
+  }
+}

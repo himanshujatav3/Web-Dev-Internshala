@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="nav-left">SRS</div>
+      <div class="nav-right">
+        <button class="nav-btn" onclick="scrollToSection('home')">Home</button>
+        <button class="nav-btn" onclick="scrollToSection('registration')">
+          Registration
+        </button>
+        <button class="nav-btn" onclick="scrollToSection('database')">
+          Database
+        </button>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search Students"
+          onkeyup="searchStudents()"
+        />
+      </div>
+      <!-- Hamburger Icon for Mobile -->
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Mobile Menu (hidden by default) -->
+      <div class="mobile-menu" id="mobileMenu">
+        <button
+          class="nav-btn"
+          onclick="scrollToSection('home'); toggleMobileMenu()"
+        >
+          Home
+        </button>
+        <button
+          class="nav-btn"
+          onclick="scrollToSection('registration'); toggleMobileMenu()"
+        >
+          Registration
+        </button>
+        <button
+          class="nav-btn"
+          onclick="scrollToSection('database'); toggleMobileMenu()"
+        >
+          Database
+        </button>
+        <input
+          type="text"
+          id="mobileSearch"
+          placeholder="Search Students"
+          onkeyup="searchStudents();"
+        />
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+      <div class="home-left">
+        <h1>Student Registration System</h1>
+        <p>
+          Easily manage student records with our efficient and user-friendly
+          system.
+        </p>
+      </div>
+      <div class="home-right">
+        <img
+          src="https://i.postimg.cc/JnZmCNc2/pexels-tamhoang139-1007066.png"
+          alt="Student Image"
+        />
+      </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="form-section">
+      <h2>Register a Student</h2>
+      <form id="studentForm">
+        <input
+          type="text"
+          id="name"
+          placeholder="Student Name"
+          required
+          pattern="[A-Za-z ]+"
+        />
+        <input
+          type="text"
+          id="studentId"
+          placeholder="Student ID"
+          required
+          pattern="[0-9]+"
+        />
+        <input type="email" id="email" placeholder="Email" required />
+        <input
+          type="text"
+          id="contact"
+          placeholder="Contact No."
+          required
+          pattern="[0-9]{10}"
+        />
+        <button type="submit">Add Student</button>
+      </form>
+    </section>
+
+    <!-- Student Database Section -->
+    <section id="database" class="database-section">
+      <h2>Registered Students</h2>
+      <table id="studentTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentBody"></tbody>
+      </table>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact-me" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Email: contact@example.com</p>
+      <p>Phone: +91-XXXXXXXXXX</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Student Registration System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript File -->
+
+    <script src="script.js"></script>
+
+    <script>
+      // Toggle mobile menu function
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        // Toggle display between none and flex
+        if (mobileMenu.style.display === "flex") {
+          mobileMenu.style.display = "none";
+        } else {
+          mobileMenu.style.display = "flex";
+        }
+      }
+
+      // Dummy functions for scrolling/searching (if not defined elsewhere)
+      function scrollToSection(sectionId) {
+        document
+          .getElementById(sectionId)
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function searchStudents() {
+        // Implement search functionality or leave empty if not used
+        console.log("Searching...");
+      }
+    </script>
+  </body>
+</html>
