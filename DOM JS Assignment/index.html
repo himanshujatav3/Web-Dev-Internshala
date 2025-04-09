@@ -17,52 +17,27 @@
     <nav>
       <div class="nav-left">SRS</div>
       <div class="nav-right">
-        <button class="nav-btn" onclick="scrollToSection('home')">Home</button>
-        <button class="nav-btn" onclick="scrollToSection('registration')">
+        <button class="nav-btn" data-section="home">Home</button>
+        <button class="nav-btn" data-section="registration">
           Registration
         </button>
-        <button class="nav-btn" onclick="scrollToSection('database')">
-          Database
-        </button>
-        <input
-          type="text"
-          id="search"
-          placeholder="Search Students"
-          onkeyup="searchStudents()"
-        />
+        <button class="nav-btn" data-section="database">Database</button>
+        <input type="text" id="search" placeholder="Search Students" />
       </div>
       <!-- Hamburger Icon for Mobile -->
-      <div class="hamburger" onclick="toggleMobileMenu()">
+      <div class="hamburger" id="hamburgerIcon">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <!-- Mobile Menu (hidden by default) -->
       <div class="mobile-menu" id="mobileMenu">
-        <button
-          class="nav-btn"
-          onclick="scrollToSection('home'); toggleMobileMenu()"
-        >
-          Home
-        </button>
-        <button
-          class="nav-btn"
-          onclick="scrollToSection('registration'); toggleMobileMenu()"
-        >
+        <button class="nav-btn" data-section="home">Home</button>
+        <button class="nav-btn" data-section="registration">
           Registration
         </button>
-        <button
-          class="nav-btn"
-          onclick="scrollToSection('database'); toggleMobileMenu()"
-        >
-          Database
-        </button>
-        <input
-          type="text"
-          id="mobileSearch"
-          placeholder="Search Students"
-          onkeyup="searchStudents();"
-        />
+        <button class="nav-btn" data-section="database">Database</button>
+        <input type="text" id="mobileSearch" placeholder="Search Students" />
       </div>
     </nav>
 
@@ -126,6 +101,7 @@
             <th>Actions</th>
           </tr>
         </thead>
+        <!-- Table body where student rows will be added -->
         <tbody id="studentBody"></tbody>
       </table>
     </section>
@@ -133,42 +109,16 @@
     <!-- Contact Me Section -->
     <section id="contact-me" class="contact-section">
       <h2>Contact Me</h2>
-      <p>Email: contact@example.com</p>
-      <p>Phone: +91-XXXXXXXXXX</p>
+      <p>Email: contact@me.com</p>
+      <p>Phone: +91-0123456789</p>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Student Registration System. All rights reserved.</p>
+      <p>© 2025 Student Registration System. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript File -->
-
     <script src="script.js"></script>
-
-    <script>
-      // Toggle mobile menu function
-      function toggleMobileMenu() {
-        const mobileMenu = document.getElementById("mobileMenu");
-        // Toggle display between none and flex
-        if (mobileMenu.style.display === "flex") {
-          mobileMenu.style.display = "none";
-        } else {
-          mobileMenu.style.display = "flex";
-        }
-      }
-
-      // Dummy functions for scrolling/searching (if not defined elsewhere)
-      function scrollToSection(sectionId) {
-        document
-          .getElementById(sectionId)
-          .scrollIntoView({ behavior: "smooth" });
-      }
-
-      function searchStudents() {
-        // Implement search functionality or leave empty if not used
-        console.log("Searching...");
-      }
-    </script>
   </body>
 </html>
