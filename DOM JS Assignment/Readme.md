@@ -100,4 +100,7 @@ This file contains all the logic for the application.
     *   `toggleMobileMenu()`: Manages the display of the mobile navigation.
     *   `searchStudents()`: Filters table rows directly by manipulating their `display` style based on the search query.
 
+### Note
+   * Since the code is on github in a public repository so as to not doxx personal information such as mobile number the contact me section doesn't contain real email and mobile number. 
+
 ---
