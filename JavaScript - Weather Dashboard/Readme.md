@@ -58,8 +58,10 @@ This project fulfills the requirements of the "Weather Forecast Application Deve
 
 ## Project Structure
 
-.
-├── index.html # Main HTML file (structure, Tailwind classes, inline styles)
-├── script.js # JavaScript file (API calls, DOM updates, logic, event handling)
-└── README.md # This documentation file
+
+index.html # Main HTML file (structure, Tailwind classes, inline styles)
+
+script.js # JavaScript file (API calls, DOM updates, logic, event handling)
+
+README.md # This documentation file
 
