@@ -10,7 +10,7 @@
     <!-- Font Awesome for Icons (Optional, but useful) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
-        /* --- MODIFIED: Added body background styles --- */
+        /* --- Background Image --- */
         body {
             background-image: url('https://i.postimg.cc/90dL1FmF/wp8948400-abstract-landscape-wallpapers.jpg');
             background-size: cover;           /* Scale the image to cover the entire body */
@@ -19,7 +19,6 @@
             background-attachment: fixed;     /* Keep the background fixed when scrolling */
             background-color: #4a5568;      /* Fallback color if the image fails to load (optional) */
         }
-        /* --- End MODIFIED --- */
 
         /* Simple transition for smoother UI updates */
         .weather-card, #current-weather, #forecast-container {
@@ -36,7 +35,7 @@
             max-height: 200px;
             overflow-y: auto;
             /* Match width - adjust based on layout */
-            width: calc(100% - 0.5rem); /* Example width matching input padding */
+            width: calc(100% - 0.5rem);
             left: 0.25rem; /* Align with input padding */
             margin-top: -1px; /* Overlap border slightly */
         }
@@ -52,7 +51,7 @@
 
     </style>
 </head>
-<!-- MODIFIED: Removed background gradient classes, kept font-sans -->
+
 <body class="font-sans">
 
     <div class="container mx-auto p-4 md:p-8 max-w-4xl">
@@ -61,8 +60,9 @@
         <!-- Search Area -->
         <!-- Using backdrop-blur requires a semi-transparent background -->
         <div class="bg-white/50 backdrop-blur-md p-6 rounded-lg shadow-lg mb-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4">Enter a City Name</h2> <!-- Adjusted text color for better contrast on light bg -->
-            <form id="search-form" class="flex flex-col sm:flex-row gap-3 relative">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Enter a City Name</h2>
+  
+            <form id="search-form" class="flex flex-col sm:flex-row gap-3 relative mb-4">
                 <div class="flex-grow relative">
                     <input
                         type="text"
@@ -82,28 +82,26 @@
                 <button
                     type="submit"
                     id="search-button"
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-md shadow-md transition duration-200 ease-in-out"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full shadow-md transition duration-200 ease-in-out"
                 >
                     Search
                 </button>
             </form>
 
-            <!-- Adjusted text color for better contrast -->
-            <div class="text-center my-3 text-gray-700 font-medium">or</div>
-
-            <button
-                id="current-location-button"
-                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-md shadow-md transition duration-200 ease-in-out"
-            >
-                Use Current Location
-            </button>
+            <div class="text-center mt-4">
+                <button
+                    id="current-location-button"
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-5 rounded-full shadow-md transition duration-200 ease-in-out"
+                >
+                    Use Current Location
+                </button>
+            </div>
             <p id="error-message" class="text-red-800 bg-red-200 p-2 mt-4 rounded text-center font-medium hidden"></p>
         </div>
 
         <!-- Weather Display Area -->
         <div id="weather-display" class="space-y-6">
             <!-- Current Weather -->
-            <!-- Changed background for better visibility on image bg -->
             <div id="current-weather" class="bg-white/70 backdrop-blur-lg p-6 rounded-lg shadow-lg hidden min-h-[150px] flex flex-col justify-center items-center md:flex-row md:justify-between md:items-center opacity-0">
                 <!-- Content will be injected by JS -->
                  <div class="text-center md:text-left">
@@ -120,7 +118,6 @@
 
             <!-- 5-Day Forecast -->
             <div id="forecast-section" class="hidden opacity-0">
-                 <!-- Adjusted text color for better contrast -->
                 <h3 class="text-2xl font-semibold text-white mb-4 text-shadow-md">5-Day Forecast</h3>
                 <div id="forecast-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     <!-- Forecast cards will be injected by JS. Adjusted bg in script -->
