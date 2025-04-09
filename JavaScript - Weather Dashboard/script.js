@@ -1,5 +1,5 @@
 // --- Constants and Variables ---
-const apiKey = "13acdf6eaf16dbdf4485d741de843711"; // <<<--- REPLACE with your actual API key
+const apiKey = "13acdf6eaf16dbdf4485d741de843711";
 const weatherApiBaseUrl = "https://api.openweathermap.org/data/2.5/weather";
 const forecastApiBaseUrl = "https://api.openweathermap.org/data/2.5/forecast";
 const recentCitiesKey = "recentWeatherAppCities";
@@ -257,9 +257,6 @@ function displayForecast(data) {
 
         // Store the forecast closest to noon (12:00) or the first one for that day
         if (!dailyForecasts[day] || Math.abs(date.getHours() - 12) < Math.abs(new Date(dailyForecasts[day].dt * 1000).getHours() - 12)) {
-             // Only add if it's a future date (or today after current time implicitly handled by API)
-             // We don't strictly need to check for future here, as API gives future forecast
-             // Let's limit to 5 days explicitly
              if (Object.keys(dailyForecasts).length < 5 || dailyForecasts[day]) {
                   dailyForecasts[day] = item;
              }
@@ -455,9 +452,6 @@ function clearWeatherData() {
  * Makes the weather data sections visible after data is loaded.
  */
  function showWeatherData() {
-     // No need for explicit call if handled in display functions,
-     // but could be used for wrapper visibility if needed.
-     // Example: weatherDisplay.classList.remove('hidden');
  }
 
 // --- Initial Setup ---
